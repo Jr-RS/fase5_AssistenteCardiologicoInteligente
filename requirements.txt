@@ -1,0 +1,4 @@
+Flask==3.0.3
+python-dotenv==1.1.1
+ibm-watson==11.2.0
+ibm-cloud-sdk-core==3.24.4

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardioIA - Assistente Cardiologico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="chat-page">
+        <section class="chat-container" aria-label="Janela de conversa com CardioIA">
+            <header class="chat-header">
+                <h1>CardioIA</h1>
+                <p>Assistente Inteligente para triagem e orientacao inicial em saude cardiaca.</p>
+            </header>
+
+            <div id="chat-messages" class="chat-messages" aria-live="polite" aria-label="Mensagens da conversa"></div>
+
+            <form id="chat-form" class="chat-input-area" autocomplete="off">
+                <label for="user-input" class="visually-hidden">Digite sua mensagem</label>
+                <input
+                    id="user-input"
+                    name="message"
+                    type="text"
+                    placeholder="Digite sua pergunta aqui..."
+                    maxlength="500"
+                    required
+                >
+                <button id="send-button" type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

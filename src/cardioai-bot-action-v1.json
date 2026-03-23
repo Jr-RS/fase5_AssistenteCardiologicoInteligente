@@ -1,0 +1,730 @@
+{
+  "name": "CardioAI Bot-action",
+  "type": "action",
+  "counts": {
+    "actions": 4,
+    "intents": 1,
+    "entities": 3,
+    "data_types": 0,
+    "collections": 0,
+    "global_variables": 0
+  },
+  "status": "Available",
+  "language": "pt-br",
+  "skill_id": "522bc7ad-92e9-4919-b08f-802d1918a583",
+  "workspace": {
+    "actions": [
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_001",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Acho que não entendi. Reformule sua pergunta."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_002_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "Receio não entender o que você está perguntando, por favor, refo",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_001",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Bem-vindo, como posso ajudá-lo?"
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "variable": "step_001",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "fallback",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "digression_failure",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Desculpe, não pude confirmar se você queria retornar ao tópico anterior, deixe-me conectar a um agente."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Vamos mandá-lo para um agente disponível."
+                },
+                "agent_unavailable": {
+                  "message": "Não há agentes disponíveis neste momento. Quando houver um disponível, conectaremos você."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "digression_failure",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Failed to confirm topic return"
+                }
+              ]
+            },
+            "next_step": "step_001"
+          },
+          {
+            "step": "step_001",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Acho que não entendi. Eu posso conectar você a um agente."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Vamos mandá-lo para um agente disponível."
+                },
+                "agent_unavailable": {
+                  "message": "Não há agentes disponíveis neste momento. Quando houver um disponível, conectaremos você."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Desculpe não poder ajudá-lo. Vou conectá-lo a um agente imediatamente."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Vamos mandá-lo para um agente disponível."
+                },
+                "agent_unavailable": {
+                  "message": "Não há agentes disponíveis neste momento. Quando houver um disponível, conectaremos você."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Acho que não entendi o que você está pedindo; vou conectá-lo a um agente."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Vamos mandá-lo para um agente disponível."
+                },
+                "agent_unavailable": {
+                  "message": "Não há agentes disponíveis neste momento. Quando houver um disponível, conectaremos você."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            },
+            "next_step": "step_004"
+          },
+          {
+            "step": "step_004",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Parece que esta conversa seria melhor gerenciada por um agente humano. Deixe-me conectá-lo a um de nossos agentes."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Vamos mandá-lo para um agente disponível."
+                },
+                "agent_unavailable": {
+                  "message": "Não há agentes disponíveis neste momento. Quando houver um disponível, conectaremos você."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_004",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Danger word detected"
+                }
+              ]
+            },
+            "next_step": "step_005"
+          },
+          {
+            "step": "step_005",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Parece que esta conversa seria melhor gerenciada por um agente humano. Deixe-me conectá-lo a um de nossos agentes."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Vamos mandá-lo para um agente disponível."
+                },
+                "agent_unavailable": {
+                  "message": "Não há agentes disponíveis neste momento. Quando houver um disponível, conectaremos você."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_005",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Profanity detected"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "Falha ao retornar para o tópico",
+            "variable": "digression_failure",
+            "data_type": "any"
+          },
+          {
+            "title": "Acho que não entendi. Eu posso conectar você a um agente.",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "Desculpe não poder ajudá-lo. Vou conectá-lo a um agente imediata",
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "Acho que não entendi o que você está pedindo; vou conectá-lo a u",
+            "variable": "step_003",
+            "data_type": "any"
+          },
+          {
+            "title": "Parece que esta conversa seria melhor gerenciada",
+            "variable": "step_004",
+            "data_type": "any"
+          },
+          {
+            "title": "Profanidade - Parece que esta conversa",
+            "variable": "step_005",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "run_always",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "danger_word_detected",
+            "type": "standard",
+            "title": "Connect to agent",
+            "handlers": [],
+            "resolver": {
+              "type": "fallback"
+            },
+            "variable": "danger_word_detected_variable",
+            "condition": {
+              "entity": "danger_words"
+            },
+            "next_step": "profanity_detected"
+          },
+          {
+            "step": "profanity_detected",
+            "type": "standard",
+            "title": "Show warning",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Use o idioma apropriado ao interagir com o assistente."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "max_hits",
+                "handler": "max_hits_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "max_hits": 2,
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "profanity_detected_variable",
+            "condition": {
+              "entity": "profane_words"
+            }
+          }
+        ],
+        "title": "Trigger word detected",
+        "action": "run_always",
+        "boosts": [],
+        "handlers": [],
+        "variables": [
+          {
+            "title": "Profanity detected",
+            "variable": "danger_word_detected_variable",
+            "data_type": "any"
+          },
+          {
+            "title": "Profane word detected",
+            "variable": "profanity_detected_variable",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else"
+      }
+    ],
+    "intents": [
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Preciso contatar a um atendente"
+          },
+          {
+            "text": "Você pode me conectar com uma pessoa real?"
+          },
+          {
+            "text": "Eu vou falar com um agente/ Eu vou falar com um agente de suporte."
+          },
+          {
+            "text": "Por favor, você pode entrar em contato comigo com um agente humano?"
+          },
+          {
+            "text": "Eu quero contatar um agente/Eu quero entrar em contato com um agente"
+          }
+        ],
+        "description": "Solicite um agente humano."
+      }
+    ],
+    "entities": [
+      {
+        "entity": "sys-yes-no",
+        "values": []
+      },
+      {
+        "entity": "danger_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "profane_words",
+        "values": [],
+        "fuzzy_match": false
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      },
+      "skill": {
+        "counts": {
+          "actions": 4,
+          "intents": 1,
+          "entities": 3,
+          "data_types": 0,
+          "collections": 0,
+          "global_variables": 0
+        }
+      }
+    },
+    "variables": [],
+    "data_types": [],
+    "collections": [],
+    "counterexamples": [],
+    "system_settings": {
+      "variable": {
+        "format": {
+          "time": {
+            "pattern": "short"
+          },
+          "currency": {
+            "fraction_digits": 2
+          }
+        }
+      },
+      "auto_learn": {
+        "apply": true
+      },
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "enable_confirmation": true,
+          "confirmation_failure": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Desculpe, não entendi, confirme, por favor."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              }
+            ]
+          },
+          "confirmation_request": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Deseja continuar com o tópico anterior: "
+                        },
+                        {
+                          "system_variable": "digressed_from"
+                        },
+                        {
+                          "scalar": "?"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              },
+              {
+                "options": [
+                  {
+                    "label": "Sim",
+                    "value": {
+                      "input": {
+                        "text": "Sim"
+                      }
+                    }
+                  },
+                  {
+                    "label": "Não",
+                    "value": {
+                      "input": {
+                        "text": "Não"
+                      }
+                    }
+                  }
+                ],
+                "response_type": "option",
+                "repeat_on_reprompt": true
+              }
+            ]
+          }
+        },
+        "max_tries": 3
+      },
+      "disambiguation": {
+        "prompt": "Você quis dizer:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "Nenhum dos itens acima",
+        "use_connect_to_support_prompt": "conectar ao suporte",
+        "single_answer_clarification_prompt": "Outra coisa"
+      },
+      "search_routing": {
+        "target": "conversational_search"
+      }
+    },
+    "learning_opt_out": false,
+    "language": "pt-br"
+  },
+  "description": "created for assistant 5e89f777-69e0-48fc-92a5-fc12ad578a7a",
+  "dialog_settings": {
+    "source_assistant": "0f3afd20-70f3-4b18-a78a-4be559eb5405"
+  },
+  "created": "2026-03-23T14:46:07.488Z",
+  "updated": "2026-03-23T14:46:07.488Z",
+  "snapshot": "1",
+  "assistant_id": "5e89f777-69e0-48fc-92a5-fc12ad578a7a",
+  "assistant_references": [
+    {
+      "name": "CardioAI Bot",
+      "assistant_id": "0f3afd20-70f3-4b18-a78a-4be559eb5405",
+      "skill_reference": "actions skill"
+    }
+  ]
+}

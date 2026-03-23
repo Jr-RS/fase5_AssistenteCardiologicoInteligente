@@ -1,0 +1,466 @@
+{
+  "name": "CardioAI Bot-dialog",
+  "type": "dialog",
+  "valid": true,
+  "counts": {
+    "intents": 3,
+    "entities": 2,
+    "dialog_nodes": 14
+  },
+  "status": "Available",
+  "created": "2026-03-23T14:46:07.488Z",
+  "updated": "2026-03-23T14:46:07.488Z",
+  "language": "pt-br",
+  "skill_id": "cd9f5490-b164-4769-9f41-010343520c29",
+  "snapshot": "1",
+  "workspace": {
+    "created": "2026-03-23T14:46:07.488Z",
+    "intents": [
+      {
+        "intent": "Encerrar",
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "examples": [
+          {
+            "text": "não, obrigado",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "é só isso",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "seria isso",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "pode gerar o protocolo",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "nada mais",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "tchau",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "Saudacao",
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "examples": [
+          {
+            "text": "Oi",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "Olá",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "Bom dia",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "Boa tarde",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "Queria falar com o assistente",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "Informar_Sintoma",
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "examples": [
+          {
+            "text": "Palpitações no peito",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "Estou sentindo uma dor forte no peito",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "Meu coração parece que vai sair pela boca",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "Sinto muita falta de ar quando caminho",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "Estou tendo palpitações hoje",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "Sinto um aperto no tórax faz duas horas",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          },
+          {
+            "text": "Parece que estou tendo um ataque cardíaco",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z"
+          }
+        ],
+        "description": ""
+      }
+    ],
+    "updated": "2026-03-23T14:46:07.488Z",
+    "entities": [
+      {
+        "entity": "SintomaCardiaco",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "palpitacao",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z",
+            "synonyms": [
+              "Palpitação",
+              "palpitações",
+              "taquicardia",
+              "acelerado",
+              "coração acelerado"
+            ]
+          },
+          {
+            "type": "synonyms",
+            "value": "dor_no_peito",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z",
+            "synonyms": [
+              "queimação no tórax",
+              "aperto",
+              "pontada"
+            ]
+          },
+          {
+            "type": "synonyms",
+            "value": "falta_de_ar",
+            "created": "2026-03-23T14:46:11.418Z",
+            "updated": "2026-03-23T14:46:11.418Z",
+            "synonyms": [
+              "dificuldade para respirar",
+              "cansaço"
+            ]
+          }
+        ],
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-number",
+        "values": [],
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z"
+      }
+    ],
+    "language": "pt-br",
+    "metadata": {
+      "skill": {
+        "counts": {
+          "intents": 3,
+          "entities": 2,
+          "dialog_nodes": 14
+        }
+      },
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "dialog_nodes": [
+      {
+        "type": "slot",
+        "parent": "node_7_1774266806452",
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "variable": "$tipo_sintoma",
+        "dialog_node": "slot_4_1774266849738",
+        "previous_sibling": "node_5_1774272565616"
+      },
+      {
+        "type": "standard",
+        "title": "Gerar_Protocolo",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Perfeito, $nome. Protocolo gerado com sucesso! Seus dados ($idade anos e relato de $tipo_sintoma) já estão no sistema.\n\nDirija-se ao guichê de atendimento. O CardioIA agradece!"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_7_1774266806452",
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "conditions": "#Encerrar",
+        "dialog_node": "node_5_1774272565616"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Entendi. Pode me dar mais detalhes? É uma dor no peito, palpitação ou falta de ar?"
+                }
+              ],
+              "response_type": "text"
+            }
+          ]
+        },
+        "parent": "slot_4_1774266849738",
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "event_name": "focus",
+        "dialog_node": "handler_3_1774266849751",
+        "previous_sibling": "handler_9_1774266849751"
+      },
+      {
+        "type": "event_handler",
+        "output": {},
+        "parent": "slot_4_1774266849738",
+        "context": {
+          "tipo_sintoma": "@SintomaCardiaco"
+        },
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "conditions": "@SintomaCardiaco",
+        "event_name": "input",
+        "dialog_node": "handler_9_1774266849751"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Como devo te chamar?"
+                }
+              ],
+              "response_type": "text"
+            }
+          ]
+        },
+        "parent": "slot_2_1774269222563",
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "event_name": "focus",
+        "dialog_node": "handler_1_1774269222565",
+        "previous_sibling": "handler_3_1774269222565"
+      },
+      {
+        "type": "event_handler",
+        "output": {},
+        "parent": "slot_2_1774269222563",
+        "context": {
+          "nome": "<? input.text ?>"
+        },
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "conditions": "true",
+        "event_name": "input",
+        "dialog_node": "handler_3_1774269222565"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Poderia me confirmar sua idade, por favor?"
+                }
+              ],
+              "response_type": "text"
+            }
+          ]
+        },
+        "parent": "slot_3_1774266518991",
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "event_name": "focus",
+        "dialog_node": "handler_5_1774266518998",
+        "previous_sibling": "handler_8_1774266518998"
+      },
+      {
+        "type": "event_handler",
+        "output": {},
+        "parent": "slot_3_1774266518991",
+        "context": {
+          "idade": "@sys-number"
+        },
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "conditions": "@sys-number",
+        "event_name": "input",
+        "dialog_node": "handler_8_1774266518998"
+      },
+      {
+        "type": "slot",
+        "output": {},
+        "parent": "node_8_1774266268787",
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "variable": "$nome",
+        "dialog_node": "slot_2_1774269222563",
+        "previous_sibling": "slot_3_1774266518991"
+      },
+      {
+        "type": "slot",
+        "parent": "node_8_1774266268787",
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "variable": "$idade",
+        "dialog_node": "slot_3_1774266518991"
+      },
+      {
+        "type": "standard",
+        "title": "Em outros casos",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Eu não entendi. Você pode tentar reformular a frase."
+                },
+                {
+                  "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+                },
+                {
+                  "text": "Eu não entendi o sentido."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "conditions": "anything_else",
+        "dialog_node": "Em outros casos",
+        "previous_sibling": "node_7_1774266806452",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "frame",
+        "title": "Coleta_Perfil",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Obrigado pelas informações, $nome! Anotei aqui que você tem $idade anos.\n\nAgora, para que eu possa agilizar seu atendimento com o médico, me descreva: o que você está sentindo no momento?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "user_input",
+          "dialog_node": "node_7_1774266806452"
+        },
+        "conditions": "true",
+        "dialog_node": "node_8_1774266268787",
+        "previous_sibling": "Bem-vindo"
+      },
+      {
+        "type": "frame",
+        "title": "Triagem_Sintomas",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Recebido, $nome. Registrei aqui que você está sentindo $tipo_sintoma.\n\nJá preparei seu prontuário com sua idade ($idade anos) e esse relato. O médico receberá essas informações assim que você iniciar a consulta presencial para agilizarmos seu atendimento.\n\nPosso te ajudar com algo mais antes de gerar seu protocolo?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "conditions": "#Informar_Sintoma",
+        "dialog_node": "node_7_1774266806452",
+        "previous_sibling": "node_8_1774266268787"
+      },
+      {
+        "type": "standard",
+        "title": "Bem-vindo",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Olá! Eu sou o CardioIA, seu assistente virtual para pré-consulta cardiológica. 🫀\n\nPara darmos início ao seu atendimento, por favor, me diga sua idade."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2026-03-23T14:46:11.418Z",
+        "updated": "2026-03-23T14:46:11.418Z",
+        "conditions": "welcome",
+        "dialog_node": "Bem-vindo"
+      }
+    ],
+    "counterexamples": [],
+    "learning_opt_out": false
+  },
+  "description": "",
+  "assistant_id": "5e89f777-69e0-48fc-92a5-fc12ad578a7a",
+  "dialog_settings": {
+    "source_assistant": "0f3afd20-70f3-4b18-a78a-4be559eb5405"
+  },
+  "assistant_references": [
+    {
+      "name": "CardioAI Bot",
+      "assistant_id": "0f3afd20-70f3-4b18-a78a-4be559eb5405",
+      "skill_reference": "main skill"
+    }
+  ]
+}
