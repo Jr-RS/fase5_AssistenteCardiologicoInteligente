@@ -8,7 +8,7 @@
 
 # Nome do projeto
 
-CardioIA - Fase 5 | Assistente Cardiologico Inteligente e Conversacional
+CardioIA - Fase 5 | Assistente Cardiológico Inteligente e Conversacional
 
 ## Nome do grupo
 
@@ -31,25 +31,25 @@ Grupo 11
 Acesse rapidamente os itens entregáveis:
 
 *  **Demonstração Funcional (Vídeo):** [Assistir no YouTube](https://youtu.be/FqvTfoDFNJM)
-*  **Relatório Técnico (PDF):** [Acessar Relatório Completo](docs/relatorio_tecnico_cardioia.pdf)
+*  **Relatório Técnico (PDF):** [Acessar Relatório Completo](document/relatorio_cardioia.pdf)
 * **Repositório do Projeto:** [GitHub](https://github.com/Jr-RS/fase5_AssistenteCardiologicoInteligente.git)
 
 ---
 
 ## 📜 Descrição
 
-O CardioIA e um assistente de pre-consulta cardiologica desenvolvido como prototipo academico na Fase 5. O foco desta etapa e a comunicacao inteligente com o paciente por meio de linguagem natural, utilizando IBM Watson Assistant integrado a um backend em Python (Flask).
+O CardioIA é um assistente de pré-consulta cardiológica desenvolvido como protótipo acadêmico na Fase 5. O foco desta etapa é a comunicação inteligente com o paciente por meio de linguagem natural, utilizando IBM Watson Assistant integrado a um backend em Python (Flask).
 
-Na pratica, o sistema simula um primeiro atendimento digital: o usuario interage por chat, informa dados basicos (como idade e nome) e relata sintomas. O assistente interpreta essas mensagens com NLP, identifica intencoes e entidades clinicas e organiza os dados de forma estruturada para apoiar o fluxo de atendimento medico.
+Na prática, o sistema simula um primeiro atendimento digital: o usuário interage por chat, informa dados básicos (como idade e nome) e relata sintomas. O assistente interpreta essas mensagens com NLP, identifica intenções e entidades clínicas e organiza os dados de forma estruturada para apoiar o fluxo de atendimento médico.
 
 Do ponto de vista funcional, o CardioIA:
 
 - conduz uma conversa inicial contextualizada;
-- coleta informacoes essenciais para triagem;
+- coleta informações essenciais para triagem;
 - identifica e registra sintomas cardiacos reportados em linguagem natural;
 - gera uma resposta organizada para apoiar a continuidade do atendimento presencial.
 
-Com isso, o projeto demonstra como agentes conversacionais podem apoiar a saude digital com foco em usabilidade, organizacao da informacao e boas praticas tecnicas.
+Com isso, o projeto demonstra como agentes conversacionais podem apoiar a saude digital com foco em usabilidade, organização da informação e boas práticas técnicas.
 
 ## 🖼 Demonstrações
 
@@ -61,13 +61,13 @@ Com isso, o projeto demonstra como agentes conversacionais podem apoiar a saude 
 
 ## 🤖 Watson Assistant (Detalhes Técnicos)
 
-O fluxo conversacional principal foi modelado no Watson Assistant (arquivo de exportacao em [src/cardioai-bot-dialog-v1.json](src/cardioai-bot-dialog-v1.json)), com intents e slots para conduzir a triagem.
+O fluxo conversacional principal foi modelado no Watson Assistant (arquivo de exportação em [src/cardioai-bot-dialog-v1.json](src/cardioai-bot-dialog-v1.json)), com intents e slots para conduzir a triagem.
 
-Intencoes principais:
+Intenções principais:
 
 - #Saudacao: identifica mensagens de abertura como "Oi", "Ola", "Bom dia".
-- #Informar_Sintoma: identifica relatos clinicos como dor no peito, palpitacoes e falta de ar.
-- #Encerrar: identifica fechamento da conversa e acionamento da geracao de protocolo.
+- #Informar_Sintoma: identifica relatos clinicos como dor no peito, palpitações e falta de ar.
+- #Encerrar: identifica fechamento da conversa e acionamento da geração de protocolo.
 
 Slots de coleta de dados:
 
@@ -75,7 +75,7 @@ Slots de coleta de dados:
 - $idade: captura idade com base em @sys-number.
 - $tipo_sintoma: captura o tipo de sintoma com base na entidade @SintomaCardiaco.
 
-Exportacoes presentes no repositorio:
+Exportações presentes no repositório:
 
 - [src/cardioai-bot-dialog-v1.json](src/cardioai-bot-dialog-v1.json)
 - [src/cardioai-bot-action-v1.json](src/cardioai-bot-action-v1.json)
@@ -92,17 +92,17 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>static</b>: arquivos estaticos da interface.
   - <b>static/css</b>: estilos da aplicacao.
-  - <b>static/js</b>: logica do chat no navegador.
+  - <b>static/js</b>: lógica do chat no navegador.
 
-- <b>document</b>: pasta para documentos da fase (relatorios, anexos e evidencias).
+- <b>document</b>: pasta para documentos da fase (relatórios, anexos e evidências).
 
-- <b>src</b>: artefatos de configuracao/exportacao do Watson Assistant (dialog/action/zip).
+- <b>src</b>: artefatos de configuração/exportação do Watson Assistant (dialog/action/zip).
 
-- <b>assets</b>: imagens utilizadas no README e demonstracoes visuais do projeto.
+- <b>assets</b>: imagens utilizadas no README e demonstrações visuais do projeto.
 
-- <b>.env</b>: variaveis sensiveis de configuracao local (nao deve ser publicado).
+- <b>.env</b>: variáveis sensíveis de configuração local (não deve ser publicado).
 
-- <b>requirements.txt</b>: dependencias Python utilizadas na aplicacao.
+- <b>requirements.txt</b>: dependências Python utilizadas na aplicação.
 
 - <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
@@ -138,10 +138,10 @@ Estrutura atual (resumo):
 Pré-requisitos:
 
 - Python 3.10+ instalado.
-- Acesso a uma instancia do IBM Watson Assistant v2.
+- Acesso a uma instância do IBM Watson Assistant v2.
 - Terminal (PowerShell, CMD ou Bash).
 
-Dependencias principais:
+Dependências principais:
 
 - flask
 - ibm-watson
@@ -150,7 +150,7 @@ Dependencias principais:
 
 Passo a passo:
 
-1. Clone o repositorio:
+1. Clone o repositório:
 
 ```bash
 git clone <URL_DO_REPOSITORIO>
@@ -175,7 +175,7 @@ Linux/Mac:
 source .venv/bin/activate
 ```
 
-3. Instale as dependencias com requirements.txt:
+3. Instale as dependências com requirements.txt:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -191,9 +191,9 @@ ASSISTANT_ID=seu_assistant_id_opcional
 WATSON_USER_ID=cardioia-web-user
 ```
 
-Observacao: quando `ASSISTANT_ID` nao for informado, a aplicacao usa `ENVIRONMENT_ID` como fallback.
+Observação: quando `ASSISTANT_ID` não for informado, a aplicação usa `ENVIRONMENT_ID` como fallback.
 
-5. Execute a aplicacao:
+5. Execute a aplicação:
 
 ```bash
 python app.py
@@ -207,17 +207,17 @@ http://127.0.0.1:5000
 
 ## 🔒 Segurança
 
-> **ATENCAO:** Nunca versione credenciais reais da IBM Cloud (`API_KEY`, `SERVICE_URL`, `ENVIRONMENT_ID`, `ASSISTANT_ID`).
+> **ATENÇÃO:** Nunca versione credenciais reais da IBM Cloud (`API_KEY`, `SERVICE_URL`, `ENVIRONMENT_ID`, `ASSISTANT_ID`).
 >
-> Mantenha esses dados apenas no arquivo `.env` local, inclua `.env` no `.gitignore` e, em ambientes de producao, utilize variaveis de ambiente seguras (secret manager/cofre de segredos).
+> Mantenha esses dados apenas no arquivo `.env` local, inclua `.env` no `.gitignore` e, em ambientes de produção, utilize variáveis de ambiente seguras (secret manager/cofre de segredos).
 
 
 ## 🗃 Histórico de lançamentos
 
 * 1.0.0 - 23/03/2026
-    * Prototipo funcional do CardioIA (Fase 5) com backend Flask, integracao Watson Assistant v2 e interface web de chat.
-    * Implementacao de fluxo conversacional com coleta de nome, idade e sintomas.
-    * Documentacao tecnica e organizacao do repositorio.
+    * Prototipo funcional do CardioIA (Fase 5) com backend Flask, integração Watson Assistant v2 e interface web de chat.
+    * Implementação de fluxo conversacional com coleta de nome, idade e sintomas.
+    * Documentação técnica e organização do repositório.
 
 
 ## 📋 Licença
