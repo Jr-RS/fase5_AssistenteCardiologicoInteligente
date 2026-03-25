@@ -25,6 +25,16 @@ Grupo 11
 ### Coordenador(a)
 - [André Godoi Chiovato](https://www.linkedin.com/company/inova-fusca)
 
+---
+
+## 📦 Links Rápidos da Entrega
+Acesse rapidamente os itens entregáveis:
+
+*  **Demonstração Funcional (Vídeo):** [Assistir no YouTube](https://youtu.be/FqvTfoDFNJM)
+*  **Relatório Técnico (PDF):** [Acessar Relatório Completo](docs/relatorio_tecnico_cardioia.pdf)
+* **Repositório do Projeto:** [GitHub](https://github.com/Jr-RS/fase5_AssistenteCardiologicoInteligente.git)
+
+---
 
 ## 📜 Descrição
 
